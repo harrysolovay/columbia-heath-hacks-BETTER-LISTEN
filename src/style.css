@@ -1,0 +1,113 @@
+
+.granddaddy {
+  font-family : 'Do Hyeon';
+  width : 100vw;
+  height : 100vh;
+  display : flex;
+}
+
+.wrapper {
+  display : flex;
+  flex-direction : column;
+}
+
+.header {
+  width : 100%;
+  border-bottom : 1px solid #ddd;
+  flex-direction : row;
+  display : flex;
+}
+
+h1 {
+  font-size : 25px;
+}
+
+.find-a-specialist {
+  color : #519aba;
+  border : 1px solid #519aba;
+  padding : 13px;
+  cursor : pointer;
+}
+
+.header > div:first-child {
+  flex : 1;
+  padding : 20px;
+}
+
+.header > div:nth-child(2) {
+  display : flex;
+  flex-direction : column;
+  justify-content : center;
+  padding-right : 20px;
+}
+
+.main {
+  display : flex;
+  flex : 1;
+  flex-direction : column;
+  align-items : center;
+  justify-content : center;
+}
+
+.center {
+  border : 1px solid #ddd;
+  padding : 20px;
+  margin : 20px;
+  box-shadow : 0px 0px 5px rgba(0, 0, 0, .125);
+  width : 50%;
+  text-align : center;
+}
+
+.heading {
+  padding-top : 30px;
+  font-size : 40px;
+}
+
+.body {
+  margin-top : 15px;
+  font-size : 20px;
+  line-height : 30px;
+  margin-bottom : 10px;
+}
+
+.action {
+  font-size : 18px;
+  padding : 13px;
+  cursor : pointer;
+  display : inline-block;
+  margin : 10px;
+}
+
+.bad {
+  color : #a3231d;
+  border : 1px solid #a3231d;
+}
+
+.good {
+  color : #519aba;
+  border : 1px solid #519aba;
+}
+
+.footer {
+  display : flex;
+  flex-direction : row;
+  font-size : 25px;
+}
+
+.footer > * {
+  padding : 18px;
+}
+
+.footer > *:first-child {
+  flex : 1;
+}
+
+.visibleModal {
+  position : absolute;
+  top : 0; right : 0; bottom : 0; left : 0;
+  background-color : rgba(255, 255, 255, .95);
+}
+
+.hiddenModal {
+  display : none;
+}
