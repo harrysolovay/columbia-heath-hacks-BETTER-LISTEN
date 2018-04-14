@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import WebFont from 'webfontloader'
+import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
+import {SimpleLineChart} from './graph.js'
 
 import 'reset-css'
 import './style.css'
@@ -9,8 +11,8 @@ import './style.css'
 class App extends Component {
 
   state = {
-    heading : 'test heading',
-    body : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    heading : 'Ready to Start?',
+    body : 'This test will perform a basic diagnostic test of your hearing and generate your unique hearing profile!',
     count : 10,
     availableStateChange : 'PAUSE',
     modalVisible : false
@@ -24,7 +26,6 @@ class App extends Component {
         families : [ 'Raleway', 'Gamja Flower', 'Do Hyeon' ]
       }
     })
-
   }
 
   render() {
@@ -50,7 +51,7 @@ class App extends Component {
             <div className='center'>
               <div className='heading'>{ this.state.heading }</div>
               <div className='body'>{ this.state.body }</div>
-              <div className='action bad'>some action</div>
+              <div className='action bad'></div>
               <div className='action good'>some action</div>
             </div>
           </div>
@@ -59,8 +60,12 @@ class App extends Component {
             <div>{ this.state.availableStateChange }</div>
           </div>
         </div>
-        <div className={ this.state.modalVisible ? 'visibleModal' : 'hiddenModal' }>
-          modal
+        <div id="modal" className={ this.state.modalVisible ? 'visibleModal' : 'hiddenModal' }>
+          {
+            this.state.modalVisible
+              ? <SimpleLineChart />
+              : null
+          }
         </div>
       </div>
     )
