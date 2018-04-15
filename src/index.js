@@ -9,9 +9,38 @@ import Tone from 'tone'
 import 'reset-css'
 import './style.css'
 
-var START_VOL = -20
+var START_VOL = -50
 var START_TONE = 250
-var LAST_TONE = START_TONE * 4
+var LAST_TONE = START_TONE * 8
+
+function prettify(obj)
+{
+  var od = new Object;
+  var result = "";
+  var len = 0;
+
+  for (var property in obj)
+  {
+    var value = obj[property];
+    if (typeof value == 'string')
+      value = "'" + value + "'";
+    else if (typeof value == 'object')
+    {
+      if (value instanceof Array)
+      {
+        value = "[ " + value + " ]";
+      }
+      else
+      {
+        var ood = prettify(value);
+        value = "{ " + ood + " }";
+      }
+    }
+    result += "'" + property + "' : " + value + ", ";
+    len++;
+  }
+  return result.replace(/, $/, "");
+}
 
 class App extends Component {
 
@@ -69,10 +98,12 @@ class App extends Component {
   }
 
   advanceTone() {
-    this.acuity.push({
-      freq : this.state.freq,
+    this.acuity.push(
+      {
+      freq : this.state.tone,
       vol : this.state.vol
-    });
+      }
+    );
     if (this.state.tone < LAST_TONE)
     {
       this.setState(
@@ -109,6 +140,7 @@ class App extends Component {
   }
 
   showGraph() {
+    alert(prettify(this.acuity))
     this.setState(
       Object.assign(
         {},
