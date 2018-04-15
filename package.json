@@ -1,0 +1,25 @@
+{
+  "name": "better-listen",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "fragment": "^0.3.0",
+    "math": "^0.0.3",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-scripts": "1.1.4",
+    "recharts": "^1.0.0-beta.10",
+    "reset-css": "^3.0.0",
+    "tone": "^0.12.80",
+    "webfontloader": "^1.6.28"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-hot-loader": "^4.0.1"
+  }
+}
