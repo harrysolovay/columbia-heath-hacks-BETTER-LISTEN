@@ -5,6 +5,7 @@ import WebFont from 'webfontloader'
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 import {SimpleLineChart} from './graph.js'
 import Tone from 'tone'
+import {StreamgraphExample, generateData} from './streamgraph-example.js'
 
 import 'reset-css'
 import './style.css'
@@ -198,7 +199,11 @@ class App extends Component {
         <div id="modal" className={ this.state.modalVisible ? 'visibleModal' : 'hiddenModal' }>
           {
             this.state.modalVisible
-              ? <SimpleLineChart data={this.acuity} />
+              ?
+              <React.Fragment>
+                <SimpleLineChart data={this.acuity} />
+                <StreamgraphExample acuity={this.acuity} data={generateData(this.acuity)} />
+              </React.Fragment>
               : null
           }
         </div>

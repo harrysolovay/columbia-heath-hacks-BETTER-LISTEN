@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "fragment": "^0.3.0",
+    "index": "^0.4.0",
     "math": "^0.0.3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-scripts": "1.1.4",
+    "react-vis": "^1.9.2",
     "recharts": "^1.0.0-beta.10",
     "reset-css": "^3.0.0",
     "tone": "^0.12.80",
