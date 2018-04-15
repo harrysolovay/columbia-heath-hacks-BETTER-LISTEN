@@ -8,6 +8,7 @@
 
 .wrapper {
   display : flex;
+  flex : 1;
   flex-direction : column;
 }
 
@@ -106,8 +107,29 @@ h1 {
   position : absolute;
   top : 0; right : 0; bottom : 0; left : 0;
   background-color : rgba(255, 255, 255, .95);
+  display : flex;
+  align-items : center;
+  justify-content : center;
+}
+
+.restart {
+  position : absolute;
+  top : 0px; right : 0px;
+  padding : 10px;
+  cursor : pointer;
+}
+
+.share {
+  position : absolute;
+  bottom : 0px; left : 0px;
+  padding : 10px;
+  cursor : pointer;
 }
 
 .hiddenModal {
   display : none;
+}
+
+.recharts-wrapper {
+  margin : 0px !important;
 }

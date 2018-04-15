@@ -197,6 +197,7 @@ class App extends Component {
            */}
         </div>
         <div id="modal" className={ this.state.modalVisible ? 'visibleModal' : 'hiddenModal' }>
+          <div className='restart' onClick={ () => window.location.reload(false) }>RESTART</div>
           {
             this.state.modalVisible
               ?
@@ -206,6 +207,18 @@ class App extends Component {
               </React.Fragment>
               : null
           }
+          <div
+            className='share'
+            onClick={ () => {
+              window.FB.ui({
+                method: 'share',
+                mobile_iframe : true,
+                href: 'http://healthhacks.nyc'
+              }, (response) => {
+                console.log(response)
+              })
+            } }
+          >SHARE ON FACEBOOK</div>
         </div>
       </div>
     )
